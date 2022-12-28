@@ -1,20 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubeserve
+  name: kubeserve-deployment
   labels:
     app: kubeserve
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
       app: kubeserve
-    minReadySeconds: 45 # wait for 10 sec before pod is ready going to next
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1  # take down 1 pod at a time
-      maxSurge: 2        # bring one at a time
   template:
     metadata:
       labels:
@@ -22,4 +16,6 @@ spec:
     spec:
       containers:
       - name: kubeserve
-        image: nareshdt99/abctechnologies:1.0
+        image: abctechnologies:1.0
+        ports:
+        - containerPort: 80
