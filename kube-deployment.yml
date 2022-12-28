@@ -12,7 +12,7 @@ spec:
     rollingUpdate:
       maxUnavailable: 1  # take down 1 pod at a time
       maxSurge: 2        # bring one at a time
-  selector:
+   selector:
     matchLabels:
       app: kubeserve
   template:
