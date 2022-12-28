@@ -2,7 +2,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubeserve
   labels:
     app: kubeserve
 spec:
@@ -24,7 +23,7 @@ spec:
     spec:
       containers:
       - image: nareshdt99/abctechnologies-1.0
-        name: kubeserve
+        name: app
 ---
 #kind: Service
 apiVersion: v1
