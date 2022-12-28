@@ -23,8 +23,8 @@ spec:
         app: kubeserve
     spec:
       containers:
-      - image: nareshdt99/abctechnologies-1.0
-        name: app
+      - name: kubeserve
+        image: nareshdt99/abctechnologies-1.0
 ---
 #kind: Service
 apiVersion: v1
