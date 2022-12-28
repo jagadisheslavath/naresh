@@ -17,7 +17,6 @@ spec:
       maxSurge: 2        # bring one at a time
   template:
     metadata:
-      name: kubeserve
       labels:
         app: kubeserve
     spec:
